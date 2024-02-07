@@ -11,7 +11,7 @@ menuIcon.onclick = () => {
 //scroll sections
 
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.header nav a');
+let navLinks = document.querySelectorAll('header nav a');
 
 
 window.onscroll = () => {
@@ -24,11 +24,17 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('.header nav a[href*=' + id + ']').classList.add('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             });
+            //Active secitons for animation on scroll
+            sec.classList.add('show-animate');
         }
+        else {
+            sec.classList.remove('show-animate');
+        }
+
     });
-    let header = document.querySelectorAll('.header');
+    let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
 
@@ -53,3 +59,25 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+
+let filter_btn = document.querySelectorAll('.filter-btn');
+let tab_items = document.querySelectorAll('.tab-item');
+
+for (let i = 0; i < filter_btn.length; i++) {
+  filter_btn[i].addEventListener('click', function () {
+    for (let j = 0; j < filter_btn.length; j++) {
+      filter_btn[j].classList.remove('active');
+    }
+    let select_tab = filter_btn[i].getAttribute('data-tab');
+    filter_btn[i].classList.add('active');
+    for (let t = 0; t < tab_items.length; t++) {
+      document.querySelector('.tab-filter-item-container').style.height =
+        tab_items[t].scrollHeight + 'px';
+      if (tab_items[t].classList.contains(select_tab)) {
+        tab_items[t].classList.add('select_tab');
+      } else {
+        tab_items[t].classList.remove('select_tab');
+      }
+    }
+  });
+}
