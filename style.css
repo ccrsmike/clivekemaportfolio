@@ -775,10 +775,8 @@ ul li i:after {
 }
 
 .tab-content-left img {
-    max-width: 30rem;
-    max-height: 26rem;
-    width: 100%;
-    height: 100%;
+    width: 30rem;
+    height: 26rem;
 }
 
 .tab-heading {
