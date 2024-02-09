@@ -204,7 +204,7 @@ section {
 
 .chatbot-container {
     position: fixed;
-    bottom: 5rem;
+    bottom: 3rem;
     left: 12rem;
     padding: 2rem;
     background-color: var(--bg-color);
@@ -1073,6 +1073,10 @@ textarea {
         padding-right: 4%;
     }
 
+    .navbar a{
+        font-size: 1.4rem;
+    }
+
     section {
         padding: 10rem 4% 2rem;
     }
@@ -1216,6 +1220,7 @@ textarea {
 
     .education-content .content {
         flex-direction: column;
+        padding: 2rem;
     }
 
     .education-content .content .left,

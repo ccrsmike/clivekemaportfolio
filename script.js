@@ -136,6 +136,7 @@ for (let i = 0; i < filter_btn.length; i++) {
                 result.classList.remove("text-gray-500");
                 result.classList.add("text-red-500");
               }
+              window.location.href = "index.html#contact"; 
             })
             .catch((error) => {
               console.log(error);
@@ -155,3 +156,6 @@ for (let i = 0; i < filter_btn.length; i++) {
     );
   });
 })();
+const button = document.getElementById("send");
+
+
