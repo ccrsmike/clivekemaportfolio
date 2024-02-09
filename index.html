@@ -12,7 +12,16 @@
 </head>
 
 <body>
-    <img class="smoke1" src="smoke1.png" alt="">
+    <div class="background"></div>
+    <img src="gradient-back.png" alt="" class="gradient1">
+    <img src="gradient-back.png" alt="" class="gradient2">
+    <img src="gradient-back.png" alt="" class="gradient3">
+    <img src="gradient-back.png" alt="" class="gradient4">
+    <img src="gradient-back.png" alt="" class="gradient5">
+    <img src="gradient-back.png" alt="" class="gradient6">
+    <div class="chatbot-container">
+        <a href="#popup1" class="chatbot"><i class='bx bx-chat'></i></a>
+    </div>
     <header class="header">
         <a href="#" class="logo">CK.</a>
         <div class="bx bx-menu" id="menu-icon"></div>
@@ -22,7 +31,6 @@
             <a href="#services">Services</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
-            <a href="#popup1" class="btn button">Online Reception</a>
             <span class="active-nav"></span>
         </nav>
     </header>
@@ -277,16 +285,16 @@
                     </div>
                     <div class="ser-content-right">
                         <h3 class="ser-heading">Software and Infrastructure</h1>
-                        <ul>
-                            <li>Server installation and configuration (Windows, Linux)</li>
-                            <li>Network design and implementation</li>
-                            <li>Cloud migration and management</li>
-                            <li>Security audits and hardening</li>
-                            <li>Backup solutions and disaster recovery</li>
-                        </ul>
-                        <div class="btn-box">
-                            <a class="btn" href="#">Explore Service</a>
-                        </div>
+                            <ul>
+                                <li>Server installation and configuration (Windows, Linux)</li>
+                                <li>Network design and implementation</li>
+                                <li>Cloud migration and management</li>
+                                <li>Security audits and hardening</li>
+                                <li>Backup solutions and disaster recovery</li>
+                            </ul>
+                            <div class="btn-box">
+                                <a class="btn" href="#">Explore Service</a>
+                            </div>
                     </div>
                 </div>
                 <div class="ser-item2">
@@ -365,35 +373,63 @@
     </section>
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>me!</span></h2>
-        <form id="contactForm">
-            <div class="input-box">
-                <div class="input-field">
-                    <input id="name" name="name" type="text" placeholder="Full Name" required>
-                    <span class="focus"></span>
+        <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
+            <input type="hidden" name="access_key" value="6f2d17bc-cedc-4366-b5be-a7b6b40cd498" />
+            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+            <div class="name-container">
+                <div class="fname-container">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="name" id="first_name" placeholder="John" autocomplete="off" required />
+                    <div class="empty-feedback invalid-feedback">
+                        Please provide your first name.
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input id="email" name="email" type="email" placeholder="Email Address" required>
-                    <span class="focus"></span>
+                <div class="lname-container">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="last_name" id="lname" placeholder="Doe" autocomplete="off" required />
+                    <div class="empty-feedback invalid-feedback">
+                        Please provide your last name.
+                    </div>
                 </div>
             </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <input id="number" name="number" type="number" placeholder="Phone Number" required>
-                    <span class="focus"></span>
+
+            <div class="contacts-container">
+                <div class="email-container">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="you@company.com" autocomplete="off" required />
+                    <div class="empty-feedback">
+                        Please provide your email address.
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid email address.
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input id="subject" name="subject" type="text" placeholder="Email Subject" required>
-                    <span class="focus"></span>
+
+                <div class="phone-container">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" autocomplete="off" required />
+
+                    <div class="empty-feedback invalid-feedback">
+                        Please provide your phone number.
+                    </div>
                 </div>
             </div>
-            <div class="textarea-field">
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"
-                    required></textarea>
-                <span class="focus"></span>
+            <div class="message-container">
+                <label for="message">Your Message</label>
+
+                <textarea rows="5" name="message" id="message" placeholder="Your Message" required></textarea>
+                <div class="empty-feedback invalid-feedback">
+                    Please enter your message.
+                </div>
             </div>
-            <div class="btn-box btns">
-                <button type="submit" class="btn">Submit</button>
+            <div class="submit-button btn-box">
+                <button class="btn" type="submit">
+                    Send Message
+                </button>
             </div>
+            <p class="text-base text-center text-gray-400" id="result"></p>
         </form>
     </section>
     <footer class="footer">
@@ -407,6 +443,11 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script>$('form').on('submit', function () {
+            $('head').append('<meta http-equiv="refresh" content="5;url=/index.html">');
+        });
+    </script>
 </body>
 
 </html>
